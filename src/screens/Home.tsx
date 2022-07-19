@@ -9,6 +9,7 @@ import {
   Text,
   Center
 } from 'native-base';
+import { useNavigation } from '@react-navigation/native';
 import { SignOut } from 'phosphor-react-native';
 import Logo from '../assets/logo_secondary.svg';
 import { Filter } from '../components/Filter';
@@ -18,8 +19,8 @@ import { ChatTeardropText } from 'phosphor-react-native';
 
 export function Home() {
 
+  const navigation = useNavigation();
   const { colors } = useTheme();
-
   const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>('open');
   const [orders, setOrders] = useState<OrderProps[]>([
     {
@@ -77,6 +78,14 @@ export function Home() {
       status: 'open'
     },
   ]);
+
+  function handleNewOrder(){
+    navigation.navigate('new');
+  }
+
+  function handleOpenDetails(orderId: string){
+    navigation.navigate('details', {orderId});
+  }
 
   return (
     <VStack
@@ -155,7 +164,10 @@ export function Home() {
           data={orders}
           keyExtractor={item => item.id}
           renderItem={({ item }) =>
-            <Order data={item} />
+            <Order
+            data={item}
+            onPress = {()=>handleOpenDetails(item.id)}
+            />
           }
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{
@@ -186,7 +198,10 @@ export function Home() {
             )
           }
         />
-        <Button title="Nova Socilitação" />
+        <Button
+          title="Nova Socilitação"
+          onPress={handleNewOrder}
+        />
       </VStack>
     </VStack>
   );

@@ -1,6 +1,14 @@
-import { VStack } from 'native-base';
+import { VStack, Text } from 'native-base';
+import {useRoute} from '@react-navigation/native';
 import { Header } from '../components/Header';
+
+type RoutesParams = {
+  orderId: string;
+}
+
 export function Details() {
+  const route = useRoute();
+  const { orderId } = route.params as RoutesParams;
 
   return (
     <VStack
@@ -10,6 +18,9 @@ export function Details() {
       <Header
         title="solicitação"
       />
+      <Text color="white">
+        {orderId}
+      </Text>
 
     </VStack>
   );

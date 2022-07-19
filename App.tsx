@@ -1,7 +1,5 @@
 import { NativeBaseProvider, StatusBar } from "native-base";
-import { SignIn } from './src/screens/Signin';
-import { Home } from './src/screens/Home';
-import { Register } from './src/screens/Register';
+import { Routes } from './src/routes';
 import { THEME } from './src/styles/theme';
 import {
   useFonts,
@@ -24,9 +22,7 @@ export default function App() {
       />
       {
         fontsLoaded ?
-          //<SignIn /> :
-          //<Home /> :
-          <Register /> :
+          <Routes /> :
           <Loading />
       }
     </NativeBaseProvider>
