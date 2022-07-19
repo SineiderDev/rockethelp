@@ -128,12 +128,12 @@ export function Home() {
           <Heading
             color="gray.100"
           >
-            Meus Chamados
+            Solicitações
           </Heading>
           <Text
             color="gray.200"
           >
-            3
+            {orders.length}
           </Text>
         </HStack>
 
