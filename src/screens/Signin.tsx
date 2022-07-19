@@ -6,8 +6,8 @@ import {
   useTheme
 } from 'native-base';
 import Logo from '../assets/logo_primary.svg';
-import { Input } from '../components/Input';
 import { Envelope, Key } from 'phosphor-react-native';
+import { Input } from '../components/Input';
 import { Button } from '../components/Button';
 
 export function SignIn() {

@@ -159,10 +159,10 @@ export function Home() {
           }
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{
-            paddingBottom:100,
+            paddingBottom: 100,
           }}
           ListEmptyComponent={
-            ()=>(
+            () => (
               <Center>
                 <ChatTeardropText
                   color={colors.gray[300]}
@@ -176,9 +176,9 @@ export function Home() {
                 >
                   Você ainda não possui{'\n'}
                   solicitações {
-                    statusSelected === 'open'?
-                    'em andamento':
-                    'finalizadas'
+                    statusSelected === 'open' ?
+                      'em andamento' :
+                      'finalizadas'
                   }
                 </Text>
 
