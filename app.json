@@ -16,6 +16,22 @@
     "ios":{
       "bundleIdentifier": "com.sineider.rockethelp",
       "googleServicesFile": "./GoogleService-Info.plist"
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+      "expo.ts",
+      "expo.tsx",
+      "expo.js",
+      "expo.jsx",
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "wasm",
+      "svg"
+      ]
     }
   }
 }

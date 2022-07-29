@@ -85,7 +85,7 @@ export function Home() {
         pb={5}
         px={6}
       >
-        <Logo />
+        <Logo fill={'green'} fillSecondary={'white'} />
         <IconButton
           icon={
             <SignOut
